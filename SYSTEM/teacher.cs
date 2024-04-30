@@ -54,7 +54,7 @@ namespace SYSTEM
 
             SqlConnection con = new SqlConnection(connectionstring);
             con.Open();
-            string insertQuery = "INSERT INTO TEACHER(TEACHER_ID, TEARCHER_Name, Email , COURSE_ID, Work_done) VALUES (@teacherid, @name, @email, @courseid, @wd)";
+            string insertQuery = "INSERT INTO TEACHER(TEACHER_ID, TEACHER_Name, Email , COURSE_ID, Work_done) VALUES (@teacherid, @name, @email, @courseid, @wd)";
             SqlCommand cmd = new SqlCommand(insertQuery, con);
             cmd.Connection = con;
             cmd.CommandType = CommandType.Text;
@@ -76,7 +76,7 @@ namespace SYSTEM
         {
             SqlConnection con = new SqlConnection(connectionstring);
             con.Open();
-            string updateQuery = "UPDATE COURSE SET  TEACHER_ID = @teacherid, TEARCHER_Name = @name, Email = email, COURSE_ID = @courseid, Work_done = @wd WHERE TEACHER_ID = @teacherid";
+            string updateQuery = "UPDATE COURSE SET  TEACHER_ID = @teacherid, TEACHER_Name = @name, Email = email, COURSE_ID = @courseid, Work_done = @wd WHERE TEACHER_ID = @teacherid";
             SqlCommand cmd = new SqlCommand(updateQuery, con);
 
             cmd.Parameters.AddWithValue("@teacherid", teacherid.Text);
